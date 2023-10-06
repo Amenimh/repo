@@ -108,7 +108,7 @@ const generateRandomID = (max, min) => {
         
        
        persons =  persons.concat(person)
-        response.json(persons)
+        response.json(person)
       })
 
 
