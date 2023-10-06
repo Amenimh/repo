@@ -1,9 +1,8 @@
-POST https://phonebook-vfkd.onrender.com/api/persons
+POST http://localhost:3004/api/persons/
 Content-Type: application/json
 
-{
-    
-"name": "Nemdklöjm", 
-"number": "040-223jj34455"
 
+{    
+"name": "Nemdsklöjm", 
+"number": "040-223jj34455"
 }

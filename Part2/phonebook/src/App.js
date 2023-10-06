@@ -4,6 +4,7 @@ import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
 import personService from './services/persons'
 import Notification from './components/Notification'
+
 const App = () => {
   const [persons, setPersons] = useState([])
   const [newName, setNewName] = useState('')
@@ -24,6 +25,7 @@ const App = () => {
   useEffect(hook, [])
 
   const addName = (event) => {
+    console.log(persons);
     event.preventDefault()
     console.log(newName);
     const nameObject = {
@@ -32,8 +34,10 @@ const App = () => {
     }
 
 
-    const person = persons.find(person => person.name.toLowerCase() === nameObject.name.toLowerCase())
+    console.log(nameObject);
+    const person = persons.find(p => p.name === nameObject.name)
 
+    
     if (person && person.number === newNumber) {
       window.alert(`${newName} is already added to phonebook`)
       setNewName("")
@@ -74,12 +78,16 @@ const App = () => {
           }, 5000)
           setNewName("")
           setNewNumber("")
+        }).catch(error => {
+          setNotification(`[error] ${error.response.data.error}`)
         })
 
     }
   }
 
-  const personsToShow = persons.filter(x => x.name.toUpperCase().includes(searchName.toUpperCase()))
+  const personsToShow =
+   searchName === '' ? persons :
+   persons.filter(person => person.name.toLowerCase().includes(searchName.toLowerCase()))
 
 
 
