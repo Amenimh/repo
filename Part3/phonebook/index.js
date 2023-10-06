@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan')
 
-
+app.use(express.static('build'))
 app.use(cors())
 app.use(express.json())
 
@@ -113,7 +113,7 @@ const generateRandomID = (max, min) => {
 
 
 
-const PORT = process.env.PORT || 3002
+const PORT = process.env.PORT || 3003
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
