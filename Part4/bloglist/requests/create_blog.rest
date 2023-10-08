@@ -1,12 +1,13 @@
 
-POST http://localhost:3003/api/blogs 
+POST http://localhost:3004/api/blogs 
 Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxhcyIsImlkIjoiNjUyMmU1OGE5MGExZGE3NDJkM2ZkNWM5IiwiaWF0IjoxNjk2Nzk2ODM3fQ.kxxUwUZiCWge8VlWYzEs0X7SRfNmOhnblkAltMvf480
 
 {
 
-"title": "testBlog", 
-"author": "Nedim", 
-"url": "http://localhost:300/api/blogs",
- "likes": 10
+    "url": "http://localhost:300/api/bsslogs",
+    "title": "testsBlog", 
+    "author": "Amensi", 
+    "likes": 10
  
 }
