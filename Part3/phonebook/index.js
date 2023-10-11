@@ -79,7 +79,6 @@ app.post('/api/persons', (request, response, next) => {
   const body = request.body
 
   const person =  new Person({
-    //id: generateRandomID(92830,33),
     name: body.name,
     number: body.number
 
